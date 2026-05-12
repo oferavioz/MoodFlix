@@ -1,101 +1,21 @@
 # MoodFlix
 
 MoodFlix is a full-stack web project for movie and TV series recommendations.  
-The system helps users discover content based on mood, genre, type, rating, duration, and personal preferences.
+The website helps users explore content by mood, genre, type, rating, language, and available time.
 
-The project was developed as part of a college software engineering course.
+## Project Description
 
-## Project Overview
+MoodFlix was developed as part of a Software Engineering course.  
+The project combines front-end pages, interactive JavaScript features, PHP server-side pages, and a MySQL database.
 
-MoodFlix includes a responsive website with several interactive pages:
-
-- Home page with quick recommendation options
-- Recommendations page with categorized movie and series suggestions
-- Search page with filtering options
-- Reviews page with ratings, highlighting tools, and user review submission
-- Contact page with feedback and issue report form
-- Team and personal information pages
-- Login and registration system
-- Personal watchlist system using PHP and MySQL
-
-## Main Features
-
-### Recommendations
-
-Users can browse movies and series by category, including:
-
-- Comedy
-- Drama
-- Action
-- Science Fiction
-- Romance
-
-Each recommendation includes a poster, genre tag, content type, short description, and a "More Info" interaction.
-
-### Search and Filter
-
-The search page allows users to filter content by:
-
-- Category
-- Movie or series
-- Duration
-- Language
-- Rating range
-
-Users can also submit a request for a movie or series that is not currently listed.
-
-### Reviews
-
-The reviews page includes:
-
-- Review cards
-- Total review counter
-- Average rating calculation
-- Add review form
-- Rating slider
-- Date and time input
-- Review highlighting by rating range
-- Review guidelines opened with JavaScript
-
-### Contact Page
-
-The contact page includes a detailed form with:
-
-- User contact information
-- Preferred contact method
-- Preferred contact window
-- Feedback topic
-- Related page URL
-- Urgency level
-- Issue date and time
-- Screenshot upload field
-- Suggested design color
-- Website satisfaction range
-- Verification code check
-
-### User Authentication
-
-The system includes:
-
-- User registration
-- Login page
-- Logout option
-- Session-based access to the watchlist
-- Optional profile image upload
-
-### Watchlist
-
-Logged-in users can manage a personal watchlist.
-
-The watchlist allows users to:
-
-- Add movies or series
-- Choose type, genre, status, date, and episode number
-- View saved items in a table
-- Change watching status
-- Remove items from the list
-
-The watchlist data is stored in a MySQL database.
+The website includes:
+- Personalized mood-based recommendations
+- Search and filtering options
+- Movie and series recommendation categories
+- User reviews and ratings
+- Contact form with feedback and issue reporting
+- User registration and login
+- Personal watchlist management
 
 ## Technologies Used
 
@@ -104,58 +24,44 @@ The watchlist data is stored in a MySQL database.
 - JavaScript
 - PHP
 - MySQL
+- GitHub
 
-## JavaScript Usage
+## Main Pages
 
-JavaScript is used across the website for interactive behavior, including:
+- `index.html` – Home page with quick recommendation and media section
+- `recommendations.html` – Movie and series recommendations by category
+- `search.html` – Search and filter page
+- `reviews.html` – Reviews and ratings page
+- `contact.html` – Contact and feedback form
+- `team.html` – Project developer page
+- `PersonalInfo.html` – Personal information page
+- `login.php` – User login
+- `register.php` – User registration
+- `watchlist.php` – Personal watchlist management
+- `moodResult.php` – PHP mood quiz result page
 
-- Mobile navigation menu
-- Greeting message on the home page
-- Quick recommendation result
-- Movie information display
-- Search and filtering logic
-- Contact form verification
-- Satisfaction slider update
-- Review creation and highlighting
-- Login form validation
-- Video autoplay on scroll
+## Features
 
-## PHP and Database Usage
+- Responsive design using CSS media queries
+- Navigation bar and footer across all pages
+- Interactive JavaScript functionality
+- Form validation and user interaction
+- PHP forms and server-side processing
+- MySQL database integration
+- Watchlist add, delete, and status update actions
+- Movie trailer media section
+- External links to movie websites
 
-PHP is used for server-side functionality, including:
+## Live Website
 
-- Login
-- Registration
-- Session management
-- Watchlist operations
-- Mood quiz result generation
-- Database connection through `db.php`
+[Visit MoodFlix](http://oferavioz.byethost32.com/)
 
-MySQL is used to store user accounts and personal watchlist items.
+## GitHub Repository
 
-## Project Structure
+[View Repository](https://github.com/oferavioz/MoodFlix)
 
-```text
-MoodFlix/
-│
-├── index.html
-├── recommendations.html
-├── search.html
-├── reviews.html
-├── contact.html
-├── team.html
-├── PersonalInfo.html
-│
-├── login.php
-├── register.php
-├── logout.php
-├── watchlist.php
-├── moodResult.php
-├── db.php
-│
-├── MoodFlixCSS.css
-├── MoodFlixJS.js
-│
-├── images/
-├── media/
-└── uploads/
+## Developer
+
+Developed by Ofer Avioz  
+Computer Engineering Student  
+Ruppin Academic Center
