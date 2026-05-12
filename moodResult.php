@@ -213,6 +213,9 @@
 
         echo "<h3>Why this recommendation?</h3>";
 
+        echo "<button type='button' class='back-button' onclick='toggleMoodExplanation()'>Show Explanation</button>";
+        echo "<div id='moodExplanationBox' class='hidden-box'>";
+
         echo "<ul>";
         foreach ($moodMessages as $mood => $message) {
             if ($mood == $userMood) {

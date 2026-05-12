@@ -80,25 +80,88 @@
 
                 <div class="radio-group">
                     <label>
-                        <input type="radio" name="Preferred Contact" value="Email" checked>
-                        Email
+                        <input type="radio" name="Preferred Contact" value="Email" checked>Email
                     </label>
 
                     <label>
-                        <input type="radio" name="Preferred Contact" value="Phone">
-                        Phone
+                        <input type="radio" name="Preferred Contact" value="Phone">Phone
                     </label>
                 </div>
             </div>
 
             <div class="form-row">
-                <label>Preferred contact time:</label>
+                <label>Preferred contact window:</label>
 
                 <div class="time-range-inline">
-                    <input type="time" id="contactTimeFrom" name="Available From">
+                    <input type="datetime-local" id="contactDateTimeFrom" name="Preferred Contact Start">
                     <span>to</span>
-                    <input type="time" id="contactTimeTo" name="Available Until">
+                    <input type="time" id="contactTimeTo" name="Preferred Contact End Time">
                 </div>
+
+                <small>Choose a date and start time, then choose the end time for the preferred contact window.</small>
+            </div>
+
+            <div class="contact-extra-box">
+                <h3>Website Feedback or Issue Report</h3>
+                <p class="contact-extra-note">
+                    This part is optional. Use it if you want to suggest an improvement or report a problem on the website.
+                </p>
+
+                <div class="contact-extra-grid">
+
+                    <div class="form-row">
+                        <label for="contactTopic">Feedback Topic:</label>
+                        <input list="topicOptions" id="contactTopic" name="Feedback Topic" placeholder="Choose or type a topic">
+
+                        <datalist id="topicOptions">
+                            <option value="Movie recommendation">
+                            <option value="Series recommendation">
+                            <option value="Technical issue">
+                            <option value="Website design">
+                            <option value="Account problem">
+                            <option value="General feedback">
+                        </datalist>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contactWebsite">Related Page URL:</label>
+                        <input type="url" id="contactWebsite" name="Related Page URL" placeholder="https://example.com">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contactDate">Issue Date:</label>
+                        <input type="date" id="contactDate" name="Issue Date">
+                        <small>Choose the date when you noticed the issue.</small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contactIssueTime">Issue Time:</label>
+                        <input type="time" id="contactIssueTime" name="Issue Time">
+                        <small>Use this if you know the approximate time of the issue.</small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contactUrgency">Urgency Level:</label>
+                        <input type="number" id="contactUrgency" name="Urgency Level" min="1" max="10" placeholder="1-10">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contactFile">Attach Screenshot:</label>
+                        <input type="file" id="contactFile" name="Attached Screenshot">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contactColor">Suggested Design Color:</label>
+                        <input type="color" id="contactColor" name="Suggested Design Color" value="#dda0dd">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contactSatisfaction">Website Satisfaction: <span id="contactSatisfactionValue">5</span>/10</label>
+                        <input type="range" id="contactSatisfaction" name="Website Satisfaction" min="1" max="10" value="5" oninput="updateContactSatisfaction()">
+                    </div>
+
+                </div>
+
             </div>
 
             <div class="form-row">
@@ -106,8 +169,7 @@
 
                 <div class="checkbox-group">
                     <label>
-                        <input type="checkbox" name="Updates" value="Yes">
-                        I would like to receive MoodFlix updates.
+                        <input type="checkbox" name="Updates" value="Yes">I would like to receive MoodFlix updates.
                     </label>
                 </div>
             </div>
@@ -115,6 +177,18 @@
             <div class="form-row">
                 <label for="contactMessage">Message:</label>
                 <textarea id="contactMessage" name="Message" rows="6" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <div class="verification-box">
+                <h3>Verification</h3>
+                <p>Enter the code <strong>MoodFlix2026</strong> to verify that you are not a robot.</p>
+
+                <div class="form-row">
+                    <label for="contactPassword">Verification Code:</label>
+                    <input type="password" id="contactPassword" name="Verification Code" placeholder="Enter verification code" required>
+                </div>
+
+                <button type="button" onclick="checkVerificationCode()">Check Verification Code</button>
             </div>
 
             <div class="form-buttons">

@@ -408,7 +408,7 @@ $itemsResult = mysqli_query($conn, $itemsSql);
 
                         echo "<form method='post' action='watchlist.php#saved-watchlist'>";
                         echo "<input type='hidden' name='item_id' value='" . $row["id"] . "'>";
-                        echo "<button type='submit' name='delete_item'>Remove</button>";
+                        echo "<button type='submit' name='delete_item' onclick='return confirmDeleteItem()'>Remove</button>";
                         echo "</form>";
 
                         echo "</td>";

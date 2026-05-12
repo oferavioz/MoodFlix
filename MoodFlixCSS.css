@@ -1,5 +1,5 @@
 /* =========================
-   General page styling
+   General page styling (mostly Index)
    ========================= */
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("images/cinema.jpg");
@@ -96,7 +96,7 @@ header p {
 }
 
 /* =========================
-   Recommendations : cards section
+   Index : explore cards
    ========================= */
 .page-links {
     margin-top: 60px;
@@ -846,6 +846,13 @@ header p {
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
 .contact-form input[type="time"],
+.contact-form input[type="password"],
+.contact-form input[type="url"],
+.contact-form input[type="number"],
+.contact-form input[type="date"],
+.contact-form input[type="datetime-local"],
+.contact-form input[type="file"],
+.contact-form input[list],
 .contact-form select,
 .contact-form textarea {
     width: 100%;
@@ -914,13 +921,96 @@ header p {
     gap: 12px;
 }
 
-.time-range-inline input[type="time"] {
+.time-range-inline input[type="time"],
+.time-range-inline input[type="datetime-local"] {
     flex: 1;
 }
 
 .time-range-inline span {
     color: plum;
     font-weight: bold;
+}
+
+.contact-extra-box {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid rgba(221, 160, 221, 0.35);
+    border-radius: 18px;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.contact-extra-box h3 {
+    color: plum;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.contact-extra-note {
+    text-align: center;
+    color: lightgray;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.contact-extra-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 25px;
+}
+
+.contact-extra-box .form-row {
+    margin-bottom: 18px;
+}
+
+.contact-form input[type="range"] {
+    width: 100%;
+    accent-color: plum;
+}
+
+.contact-form input[type="color"] {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+}
+
+.verification-box {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid rgba(221, 160, 221, 0.35);
+    border-radius: 15px;
+    background-color: #050505;
+    text-align: center;
+}
+
+.verification-box h3 {
+    color: plum;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.verification-box p {
+    color: lightgray;
+    margin-bottom: 15px;
+}
+
+.verification-box button {
+    margin-top: 10px;
+    padding: 12px 24px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: plum;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.verification-box button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
 }
 
 /* =========================
@@ -1448,6 +1538,11 @@ header p {
     text-decoration: underline;
 }
 
+.auth-form small {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+}
 
 /* =========================
    Watchlist page
@@ -1542,45 +1637,12 @@ header p {
     color: white;
 }
 
-/* Saved watchlist cards */
-.watchlist-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.watchlist-card {
-    background-color: black;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: left;
-}
-
-.watchlist-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.watchlist-card h3 {
-    color: white;
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-.watchlist-card p {
-    color: lightgray;
-    margin-bottom: 15px;
-}
-
 .watch-status {
     display: inline-block;
     padding: 7px 14px;
     border-radius: 20px;
     font-size: 14px;
-    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .planned {
@@ -1596,23 +1658,6 @@ header p {
 .completed {
     background-color: rgba(144, 238, 144, 0.2);
     color: lightgreen;
-}
-
-.watchlist-card button {
-    display: block;
-    margin-top: 12px;
-    padding: 10px 16px;
-    border: 1px solid lightgray;
-    border-radius: 8px;
-    background-color: #1c1c1c;
-    color: plum;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.watchlist-card button:hover {
-    background-color: rgba(221, 160, 221, 0.35);
-    color: white;
 }
 
 #watchlistMessage {
@@ -1791,10 +1836,6 @@ header p {
 
     .footer-logo img {
         margin: 0 auto 20px auto;
-    }
-
-    .watchlist-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .add-watchlist-grid {
@@ -2093,14 +2134,6 @@ header p {
         font-size: 28px;
     }
 
-    .watchlist-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .watchlist-card img {
-        height: 280px;
-    }
-
     .add-watchlist-grid {
         grid-template-columns: 1fr;
     }
@@ -2189,6 +2222,10 @@ header p {
 
     .time-range-inline span {
         text-align: center;
+    }
+
+    .contact-extra-grid {
+        grid-template-columns: 1fr;
     }
 
 }

@@ -108,12 +108,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="form-row">
                 <label for="profile_image">Profile image:</label>
-                <input type="file" id="profile_image" name="profile_image" accept="image/*">
+                <input type="file" id="profile_image" name="profile_image" accept="image/*" onchange="showSelectedImageMessage()">
+                <small id="profileImageMessage"></small>
             </div>
 
             <div class="form-row">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Choose password" required>
+                <input type="password" id="password" name="password" placeholder="Choose password" required oninput="checkPasswordStrength()">
+                <small id="passwordStrengthMessage"></small>
             </div>
 
             <div class="form-buttons">

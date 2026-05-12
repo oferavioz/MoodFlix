@@ -200,17 +200,6 @@ function searchContent() {
     resultsBox.innerHTML = output;
 }
 
-// Contact
-function showContactMessage() {
-    let status = document.getElementById("contactStatus");
-
-    if (status) {
-        status.innerText = "Your email application will open so you can send the message.";
-    }
-
-    return true;
-}
-
 function sendMovieRequest() {
     let email = document.getElementById("requestEmail").value;
     let title = document.getElementById("requestTitle").value;
@@ -233,110 +222,51 @@ function sendMovieRequest() {
     document.getElementById("requestReason").value = "";
 }
 
-// WatchList
-let watchlistItems = [
-    {
-        title: "Inception",
-        genre: "Science Fiction",
-        type: "Movie",
-        status: "Planned",
-        image: "images/inception.jpg"
-    },
-    {
-        title: "Friends",
-        genre: "Comedy",
-        type: "Series",
-        status: "Watching",
-        image: "images/Friends.jpg"
-    },
-    {
-        title: "The Crown",
-        genre: "Drama",
-        type: "Series",
-        status: "Completed",
-        image: "images/TheCrown.jpg"
-    },
-    {
-        title: "The Dark Knight",
-        genre: "Action",
-        type: "Movie",
-        status: "Planned",
-        image: "images/TheDarkKnight.jpg"
-    }
-];
+// Contact
+function showContactMessage() {
+    let status = document.getElementById("contactStatus");
+    let codeInput = document.getElementById("contactPassword");
 
-function displayWatchlist() {
-    let grid = document.getElementById("watchlistGrid");
-
-    if (!grid) {
-        return;
-    }
-
-    let output = "";
-
-    for (let i = 0; i < watchlistItems.length; i++) {
-        let item = watchlistItems[i];
-        let statusClass = "planned";
-
-        if (item.status === "Watching") {
-            statusClass = "watching";
-        } else if (item.status === "Completed") {
-            statusClass = "completed";
+    if (codeInput && codeInput.value !== "MoodFlix2026") {
+        if (status) {
+            status.innerText = "Please enter the correct verification code before sending.";
         }
-
-        output += "<div class='watchlist-card'>";
-        output += "<img src='" + item.image + "' alt='" + item.title + " poster'>";
-        output += "<h3>" + item.title + "</h3>";
-        output += "<p>" + item.genre + " · " + item.type + "</p>";
-        output += "<span class='watch-status " + statusClass + "'>" + item.status + "</span>";
-        output += "<button onclick='changeWatchStatus(" + i + ")'>Change Status</button>";
-        output += "<button onclick='removeWatchlistItem(" + i + ")'>Remove</button>";
-        output += "</div>";
+        return false;
     }
 
-    grid.innerHTML = output;
+    if (status) {
+        status.innerText = "Your email application will open so you can send the message.";
+    }
+
+    return true;
 }
 
-function addWatchlistItem() {
-    let title = document.getElementById("watchTitle").value;
-    let type = document.getElementById("watchType").value;
-    let genre = document.getElementById("watchGenre").value;
-    let status = document.getElementById("watchStatusInput").value;
-    let message = document.getElementById("watchlistMessage");
+function updateContactSatisfaction() {
+    let satisfaction = document.getElementById("contactSatisfaction");
+    let valueText = document.getElementById("contactSatisfactionValue");
 
-    if (title === "") {
-        message.innerText = "Please enter a title before adding an item.";
-        return;
+    if (satisfaction && valueText) {
+        valueText.innerText = satisfaction.value;
     }
-
-    if (title === "") {
-        message.innerText = "Please enter a title before adding an item.";
-        return;
-    }
-
-    let image = getWatchlistImage(title);
-
-    if (image === "") {
-        message.innerText = "This title does not exist in MoodFlix. Please enter a title from the recommendations list.";
-        return;
-    }
-
-    let newItem = {
-        title: title,
-        genre: genre,
-        type: type,
-        status: status,
-        image: image
-    };
-
-    watchlistItems.push(newItem);
-
-    document.getElementById("watchTitle").value = "";
-    message.innerText = title + " was added to your watchlist.";
-
-    displayWatchlist();
 }
 
+function checkVerificationCode() {
+    let code = document.getElementById("contactPassword").value;
+    let status = document.getElementById("contactStatus");
+
+    if (code === "MoodFlix2026") {
+        status.innerText = "Verification code is correct. You can send your message.";
+    } else {
+        status.innerText = "Incorrect verification code. Please enter MoodFlix2026.";
+    }
+}
+
+// Watchlist
+function confirmDeleteItem() {
+    return window.confirm("Are you sure you want to remove this item from your watchlist?");
+}
+
+// Reviews
 function getWatchlistImage(title) {
     let cleanTitle = title.toLowerCase();
 
@@ -435,38 +365,6 @@ function getWatchlistImage(title) {
     return "";
 }
 
-function removeWatchlistItem(index) {
-    let message = document.getElementById("watchlistMessage");
-    let removedTitle = watchlistItems[index].title;
-
-    watchlistItems.splice(index, 1);
-
-    message.innerText = removedTitle + " was removed from your watchlist.";
-
-    displayWatchlist();
-}
-
-function changeWatchStatus(index) {
-    let message = document.getElementById("watchlistMessage");
-
-    if (watchlistItems[index].status === "Planned") {
-        watchlistItems[index].status = "Watching";
-    } else if (watchlistItems[index].status === "Watching") {
-        watchlistItems[index].status = "Completed";
-    } else {
-        watchlistItems[index].status = "Planned";
-    }
-
-    message.innerText = "Watchlist status updated successfully.";
-
-    displayWatchlist();
-}
-
-window.onload = function () {
-    displayWatchlist();
-};
-
-// Reviews
 let selectedHighlightRange = "";
 let selectedHighlightColor = "#dda0dd";
 
@@ -724,6 +622,51 @@ function validateLoginForm() {
         window.alert("Please enter both username and password.");
         return false;
     }
-
     return true;
 }
+
+// Register
+function checkPasswordStrength() {
+    let password = document.getElementById("password").value;
+    let message = document.getElementById("passwordStrengthMessage");
+    if (!message) {
+        return;
+    }
+    if (password.length === 0) {
+        message.innerText = "";
+    } else if (password.length < 6) {
+        message.innerText = "Weak password";
+        message.style.color = "lightcoral";
+    } else if (password.length < 10) {
+        message.innerText = "Medium password";
+        message.style.color = "gold";
+    } else {
+        message.innerText = "Strong password";
+        message.style.color = "lightgreen";
+    }
+}
+
+function showSelectedImageMessage() {
+    let imageInput = document.getElementById("profile_image");
+    let message = document.getElementById("profileImageMessage");
+    if (!imageInput || !message) {
+        return;
+    }
+    if (imageInput.files.length > 0) {
+        message.innerText = "Profile image selected.";
+        message.style.color = "lightgreen";
+
+    } else {
+        message.innerText = "";
+    }
+}
+
+// MoodResult
+function toggleMoodExplanation() {
+    let box = document.getElementById("moodExplanationBox");
+    if (!box) {
+        return;
+    }
+    box.classList.toggle("hidden-box");
+}
+
