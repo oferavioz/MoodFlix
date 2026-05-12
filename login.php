@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main>
 
     <section class="auth-section">
-        <form class="auth-form" action="login.php" method="post">
+        <form class="auth-form" action="login.php" method="post" onsubmit="return validateLoginForm()">
             <div class="form-row">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" placeholder="Enter username" required>

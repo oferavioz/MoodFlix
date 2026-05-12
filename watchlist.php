@@ -350,48 +350,79 @@ $itemsResult = mysqli_query($conn, $itemsSql);
 
         <h2 id="saved-watchlist">Your Saved Watchlist</h2>
 
-        <div class="watchlist-grid">
-            <?php
-            if (mysqli_num_rows($itemsResult) > 0) {
-                while ($row = mysqli_fetch_assoc($itemsResult)) {
-                    $image = getWatchImage($row["title"]);
-                    $statusClass = strtolower($row["status"]);
+        <div class="watchlist-table-box">
+            <table class="watchlist-table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Genre</th>
+                    <th>Status</th>
+                    <th>Watch Date</th>
+                    <th>Episode</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
 
-                    echo "<div class='watchlist-card'>";
+                <tbody>
+                <?php
+                if (mysqli_num_rows($itemsResult) > 0) {
+                    while ($row = mysqli_fetch_assoc($itemsResult)) {
+                        $image = getWatchImage($row["title"]);
+                        $statusClass = strtolower($row["status"]);
 
-                    echo "<img src='" . $image . "' alt='" . htmlspecialchars($row["title"]) . " poster'>";
+                        echo "<tr>";
 
-                    echo "<h3>" . htmlspecialchars($row["title"]) . "</h3>";
+                        echo "<td>";
+                        echo "<img src='" . $image . "' alt='" . htmlspecialchars($row["title"]) . " poster' class='watchlist-table-image'>";
+                        echo "</td>";
 
-                    echo "<p>" . htmlspecialchars($row["genre"]) . " · " . htmlspecialchars($row["type"]) . "</p>";
+                        echo "<td>" . htmlspecialchars(ucwords($row["title"])) . "</td>";
+                        echo "<td>" . htmlspecialchars($row["type"]) . "</td>";
+                        echo "<td>" . htmlspecialchars($row["genre"]) . "</td>";
 
-                    if ($row["watch_date"] != "") {
-                        echo "<p><strong>Watch date:</strong> " . htmlspecialchars($row["watch_date"]) . "</p>";
+                        echo "<td>";
+                        echo "<span class='watch-status " . $statusClass . "'>" . htmlspecialchars($row["status"]) . "</span>";
+                        echo "</td>";
+
+                        if ($row["watch_date"] != "") {
+                            echo "<td>" . htmlspecialchars($row["watch_date"]) . "</td>";
+                        } else {
+                            echo "<td>-</td>";
+                        }
+
+                        if ($row["current_episode"] != "" && $row["current_episode"] != 0) {
+                            echo "<td>" . htmlspecialchars($row["current_episode"]) . "</td>";
+                        } else {
+                            echo "<td>-</td>";
+                        }
+
+                        echo "<td class='watchlist-actions'>";
+
+                        echo "<form method='post' action='watchlist.php#saved-watchlist'>";
+                        echo "<input type='hidden' name='item_id' value='" . $row["id"] . "'>";
+                        echo "<input type='hidden' name='current_status' value='" . htmlspecialchars($row["status"]) . "'>";
+                        echo "<button type='submit' name='change_status'>Change status</button>";
+                        echo "</form>";
+
+                        echo "<form method='post' action='watchlist.php#saved-watchlist'>";
+                        echo "<input type='hidden' name='item_id' value='" . $row["id"] . "'>";
+                        echo "<button type='submit' name='delete_item'>Remove</button>";
+                        echo "</form>";
+
+                        echo "</td>";
+
+                        echo "</tr>";
                     }
-
-                    if ($row["current_episode"] != "" && $row["current_episode"] != 0) {
-                        echo "<p><strong>Current episode:</strong> " . htmlspecialchars($row["current_episode"]) . "</p>";
-                    }
-
-                    echo "<span class='watch-status " . $statusClass . "'>" . htmlspecialchars($row["status"]) . "</span>";
-
-                    echo "<form method='post' action='watchlist.php#saved-watchlist'>";
-                    echo "<input type='hidden' name='item_id' value='" . $row["id"] . "'>";
-                    echo "<input type='hidden' name='current_status' value='" . htmlspecialchars($row["status"]) . "'>";
-                    echo "<button type='submit' name='change_status'>Change Status</button>";
-                    echo "</form>";
-
-                    echo "<form method='post' action='watchlist.php#saved-watchlist'>";
-                    echo "<input type='hidden' name='item_id' value='" . $row["id"] . "'>";
-                    echo "<button type='submit' name='delete_item'>Remove</button>";
-                    echo "</form>";
-
-                    echo "</div>";
+                } else {
+                    echo "<tr>";
+                    echo "<td colspan='8'>Your watchlist is empty.</td>";
+                    echo "</tr>";
                 }
-            } else {
-                echo "<p class='watchlist-note'>Your watchlist is empty.</p>";
-            }
-            ?>
+                ?>
+                </tbody>
+            </table>
         </div>
     </section>
 

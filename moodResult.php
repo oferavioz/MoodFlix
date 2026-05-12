@@ -23,7 +23,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="recommendations.html">Recommendations</a></li>
             <li><a href="search.html">Search</a></li>
-            <li><a href="watchlist.html">Watchlist</a></li>
+            <li><a href="watchlist.php">Watchlist</a></li>
             <li><a href="reviews.html">Reviews</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="team.html">Team</a></li>
@@ -190,6 +190,8 @@
             $watchMinutes = 180;
         }
 
+        $watchHours = $watchMinutes / 60;
+
         $moodMessages = array(
             "happy" => "You seem to be in the mood for something fun and light.",
             "emotional" => "You seem ready for a deeper and more meaningful story.",
@@ -206,6 +208,7 @@
         echo "<img src='" . $recommendation["image"] . "' alt='" . $recommendation["title"] . " poster'>";
         echo "<p class='recommendation-description'>" . $recommendation["description"] . "</p>";
         echo "<p><strong>Duration:</strong> " . $recommendation["duration"] . "</p>";
+        echo "<p><strong>Your available time:</strong> " . $watchHours . " hours</p>";
         echo "</div>";
 
         echo "<h3>Why this recommendation?</h3>";
@@ -243,7 +246,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="recommendations.html">Recommendations</a></li>
             <li><a href="search.html">Search</a></li>
-            <li><a href="watchlist.html">Watchlist</a></li>
+            <li><a href="watchlist.php">Watchlist</a></li>
             <li><a href="reviews.html">Reviews</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="team.html">Team</a></li>

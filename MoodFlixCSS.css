@@ -71,7 +71,32 @@ header p {
 }
 
 /* =========================
-   cards section
+   INDEX Page - greeting
+   ========================= */
+.welcome-button {
+    margin: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    background-color: #1c1c1c;
+    color: plum;
+    cursor: pointer;
+}
+
+.welcome-button:hover {
+    background-color: dimgray;
+}
+
+#visitorGreeting {
+    margin-top: 15px;
+    font-size: 22px;
+    color: gold;
+    font-weight: bold;
+}
+
+/* =========================
+   Recommendations : cards section
    ========================= */
 .page-links {
     margin-top: 60px;
@@ -1201,6 +1226,23 @@ header p {
     color-scheme: dark;
 }
 
+.review-guidelines-button {
+    display: block;
+    margin: 0 auto 35px auto;
+    padding: 12px 24px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: plum;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.review-guidelines-button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
+}
+
 /* =========================
    Media section
    ========================= */
@@ -1613,6 +1655,73 @@ header p {
 }
 
 .logout-button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
+}
+
+.watchlist-table-box {
+    max-width: 1100px;
+    margin: 30px auto 0 auto;
+    overflow-x: auto;
+    background-color: black;
+    border: 1px solid rgba(221, 160, 221, 0.3);
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.watchlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    text-align: center;
+}
+
+.watchlist-table th {
+    color: plum;
+    padding: 14px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(221, 160, 221, 0.4);
+}
+
+.watchlist-table td {
+    padding: 12px;
+    color: lightgray;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    vertical-align: middle;
+}
+
+.watchlist-table tr:hover {
+    background-color: rgba(221, 160, 221, 0.1);
+}
+
+.watchlist-table-image {
+    width: 65px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(221, 160, 221, 0.35);
+}
+
+.watchlist-actions {
+    min-width: 150px;
+}
+
+.watchlist-actions form {
+    display: inline-block;
+    margin: 4px;
+}
+
+.watchlist-actions button {
+    padding: 8px 12px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: plum;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.watchlist-actions button:hover {
     background-color: rgba(221, 160, 221, 0.35);
     color: white;
 }

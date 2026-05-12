@@ -4,6 +4,17 @@ function toggleMenu() {
     navLinks.classList.toggle("show");
 }
 
+function askVisitorName() {
+    let visitorName = window.prompt("Please enter your name:", "Guest");
+    let greeting = document.getElementById("visitorGreeting");
+
+    if (visitorName === null || visitorName === "") {
+        greeting.innerText = "Welcome to MoodFlix!";
+    } else {
+        greeting.innerText = "Welcome to MoodFlix, " + visitorName + "!";
+    }
+}
+
 function giveRecommendation() {
     let mood = document.getElementById("moodSelect").value;
     let time = document.getElementById("timeSelect").value;
@@ -606,6 +617,27 @@ function displayReviews() {
     }
 }
 
+function openReviewGuidelines() {
+    let guideWindow = window.open("", "_blank");
+
+    guideWindow.document.write("<html>");
+    guideWindow.document.write("<head>");
+    guideWindow.document.write("<title>MoodFlix Review Guidelines</title>");
+    guideWindow.document.write("</head>");
+    guideWindow.document.write("<body style='font-family: Arial, sans-serif; background-color: #111; color: white; padding: 30px;'>");
+    guideWindow.document.write("<h1 style='color: plum;'>MoodFlix Review Guidelines</h1>");
+    guideWindow.document.write("<p>Use this guide before writing a movie or series review.</p>");
+    guideWindow.document.write("<ul>");
+    guideWindow.document.write("<li>Write the movie or series title clearly.</li>");
+    guideWindow.document.write("<li>Choose whether the content is a movie or a series.</li>");
+    guideWindow.document.write("<li>Select a rating from 0 to 5.</li>");
+    guideWindow.document.write("<li>Write what you liked or did not like.</li>");
+    guideWindow.document.write("<li>Avoid spoilers when possible.</li>");
+    guideWindow.document.write("</ul>");
+    guideWindow.document.write("</body>");
+    guideWindow.document.write("</html>");
+}
+
 function addReview() {
     let name = document.getElementById("reviewName").value;
     let title = document.getElementById("reviewTitle").value;
@@ -682,3 +714,16 @@ function autoPlayVideoOnScroll() {
 
 window.addEventListener("scroll", autoPlayVideoOnScroll);
 window.addEventListener("load", autoPlayVideoOnScroll);
+
+// LOGIN auth
+function validateLoginForm() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username === "" || password === "") {
+        window.alert("Please enter both username and password.");
+        return false;
+    }
+
+    return true;
+}
