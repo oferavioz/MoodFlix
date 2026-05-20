@@ -445,6 +445,38 @@ header p {
 /* =========================
    Recommendations page
    ========================= */
+.category-nav {
+    max-width: 1000px;
+    margin: 40px auto 60px auto;
+    padding: 25px;
+    background-color: black;
+    border: 1px solid rgba(221, 160, 221, 0.3);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.category-nav h2 {
+    color: plum;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.category-nav button {
+    margin: 8px;
+    padding: 12px 20px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: plum;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.category-nav button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
+}
+
 .recommendations-section {
     margin: 60px auto;
     padding: 0 30px;
@@ -549,29 +581,6 @@ header p {
     min-height: 95px;
 }
 
-.movie-card button {
-    margin-top: 10px;
-    font-size: 15px;
-    padding: 10px 18px;
-    border: 1px solid lightgray;
-    border-radius: 6px;
-    background-color: #1c1c1c;
-    color: plum;
-    cursor: pointer;
-}
-
-.movie-card button:hover {
-    background-color: dimgray;
-}
-
-#movieInfo {
-    max-width: 900px;
-    margin: 30px auto;
-    font-size: 20px;
-    color: gold;
-    font-weight: bold;
-    text-align: center;
-}
 
 .genres-section,
 .why-section,
@@ -645,6 +654,23 @@ header p {
     text-decoration: underline;
 }
 
+.back-to-top-button {
+    display: block;
+    margin: 40px auto;
+    padding: 12px 24px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: plum;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.back-to-top-button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
+}
+
 /* =========================
    Search page
    ========================= */
@@ -666,8 +692,10 @@ header p {
     margin-bottom: 20px;
 }
 
-.search-grid select {
+.search-grid select,
+.search-grid input {
     width: 100%;
+    box-sizing: border-box;
     padding: 18px;
     border: none;
     border-radius: 12px;
@@ -677,12 +705,22 @@ header p {
     outline: none;
 }
 
-.search-grid select:focus {
+.search-grid input::placeholder {
+    color: gray;
+}
+
+.search-grid select:focus,
+.search-grid input:focus {
     box-shadow: 0 0 0 2px plum;
+}
+
+.full-row-select {
+    grid-column: 1 / 3;
 }
 
 .search-main-button {
     width: 100%;
+    box-sizing: border-box;
     padding: 18px;
     border: 1px solid lightgray;
     border-radius: 12px;
@@ -706,6 +744,7 @@ header p {
     background-color: black;
     border-radius: 15px;
     text-align: left;
+    box-sizing: border-box;
 }
 
 .search-results p {
@@ -730,8 +769,57 @@ header p {
     margin: 6px 0;
 }
 
-.full-row-select {
-    grid-column: 1 / 3;
+.search-result-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.search-result-image {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(221, 160, 221, 0.35);
+    flex-shrink: 0;
+}
+
+.search-result-info {
+    flex: 1;
+    padding-top: 4px;
+}
+
+.search-result-info h3 {
+    color: plum;
+    font-size: 24px;
+    margin: 0 0 12px 0;
+}
+
+.search-result-info p {
+    color: lightgray;
+    margin: 7px 0;
+    font-size: 16px;
+}
+
+.search-result-info strong {
+    color: white;
+}
+
+.details-button {
+    margin-top: 12px;
+    padding: 10px 18px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: plum;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.details-button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
 }
 
 .request-section {
@@ -742,6 +830,7 @@ header p {
     border-radius: 15px;
     text-align: left;
     border: 1px solid rgba(221, 160, 221, 0.3);
+    box-sizing: border-box;
 }
 
 .request-section h2 {
@@ -1421,7 +1510,7 @@ header p {
     padding: 30px;
     background-color: black;
     border-radius: 15px;
-    text-align: left;
+    text-align: center;
     border: 1px solid rgba(221, 160, 221, 0.3);
 }
 
@@ -1436,22 +1525,91 @@ header p {
     color: white;
     font-size: 26px;
     margin-top: 25px;
+    text-align: center;
 }
 
 .php-result-box p {
     color: lightgray;
     font-size: 18px;
     line-height: 1.6;
+    text-align: center;
 }
 
 .php-result-box ul {
+    max-width: 700px;
+    margin: 20px auto;
     color: lightgray;
     font-size: 18px;
     line-height: 1.8;
+    text-align: left;
 }
 
 .php-result-box strong {
     color: plum;
+}
+
+.recommendation-result {
+    text-align: center;
+}
+
+.recommendation-result h3 {
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.recommendation-result img {
+    width: 260px;
+    max-width: 90%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    border: 1px solid rgba(221, 160, 221, 0.35);
+    display: block;
+    margin: 25px auto;
+}
+
+.recommendation-description {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.result-intro {
+    text-align: center;
+}
+
+.mood-explanation-section {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.mood-explanation-button {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: plum;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mood-explanation-button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
+}
+
+#moodExplanationBox {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.result-buttons {
+    text-align: center;
+    margin-top: 25px;
 }
 
 .back-button {
@@ -1586,8 +1744,10 @@ header p {
 .add-watchlist-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    column-gap: 22px;
+    row-gap: 22px;
     margin-bottom: 25px;
+    align-items: start;
 }
 
 .watchlist-field {
@@ -1605,8 +1765,8 @@ header p {
 .watchlist-field small {
     color: lightgray;
     font-size: 12px;
-    line-height: 1.4;
-    min-height: 34px;
+    line-height: 1.3;
+    margin-top: 2px;
 }
 
 .watchlist-field input,
@@ -1623,6 +1783,8 @@ header p {
 }
 
 .add-watchlist-box button {
+    display: block;
+    margin-top: 18px;
     padding: 12px 24px;
     border: 1px solid lightgray;
     border-radius: 8px;
@@ -1637,6 +1799,15 @@ header p {
     color: white;
 }
 
+#watchlistMessage {
+    display: block;
+    margin-top: 25px;
+    color: gold;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Status labels */
 .watch-status {
     display: inline-block;
     padding: 7px 14px;
@@ -1660,13 +1831,7 @@ header p {
     color: lightgreen;
 }
 
-#watchlistMessage {
-    margin-top: 25px;
-    color: gold;
-    font-size: 20px;
-    font-weight: bold;
-}
-
+/* User profile */
 .user-profile-header {
     text-align: center;
 }
@@ -1686,7 +1851,7 @@ header p {
     background-color: black;
 }
 
-/* LOGOUT */
+/* Logout */
 .logout-button {
     display: inline-block;
     margin-top: 15px;
@@ -1704,6 +1869,7 @@ header p {
     color: white;
 }
 
+/* Watchlist table */
 .watchlist-table-box {
     max-width: 1100px;
     margin: 30px auto 0 auto;
@@ -1748,7 +1914,8 @@ header p {
 }
 
 .watchlist-actions {
-    min-width: 150px;
+    min-width: 190px;
+    white-space: nowrap;
 }
 
 .watchlist-actions form {
@@ -1767,6 +1934,70 @@ header p {
 }
 
 .watchlist-actions button:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
+}
+
+/* =========================
+   Details page
+   ========================= */
+.details-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 35px;
+    background-color: black;
+    border-radius: 18px;
+    border: 1px solid rgba(221, 160, 221, 0.3);
+    text-align: left;
+}
+
+.details-layout {
+    display: flex;
+    gap: 35px;
+    align-items: flex-start;
+}
+
+.details-image {
+    width: 280px;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid rgba(221, 160, 221, 0.35);
+    flex-shrink: 0;
+}
+
+.details-info h2 {
+    color: plum;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.details-info p {
+    color: lightgray;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.details-info strong {
+    color: plum;
+}
+
+.trailer-button,
+.details-back-button {
+    display: inline-block;
+    margin-top: 18px;
+    margin-right: 12px;
+    padding: 12px 24px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: plum;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.trailer-button:hover,
+.details-back-button:hover {
     background-color: rgba(221, 160, 221, 0.35);
     color: white;
 }
@@ -2228,4 +2459,52 @@ header p {
         grid-template-columns: 1fr;
     }
 
+    .category-nav {
+        margin: 30px 15px;
+        padding: 20px 15px;
+    }
+
+    .category-nav h2 {
+        font-size: 26px;
+    }
+
+    .category-nav button {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .details-section {
+        margin: 40px 15px;
+        padding: 20px 15px;
+    }
+
+    .details-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .details-image {
+        width: 220px;
+        height: 320px;
+    }
+
+    .details-info h2 {
+        font-size: 28px;
+    }
+
+    .search-result-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .search-result-image {
+        width: 180px;
+        height: 260px;
+    }
+
+    .search-result-info h3 {
+        font-size: 22px;
+    }
 }

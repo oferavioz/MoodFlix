@@ -132,21 +132,7 @@
                 return $recommendations[$key];
             }
 
-            if ($type == "movie") {
-                return array(
-                    "title" => "Inception",
-                    "image" => "images/inception.jpg",
-                    "duration" => "148 minutes",
-                    "description" => "A mind-bending science fiction thriller about dreams, memory, and reality."
-                );
-            }
-
-            return array(
-                "title" => "Friends",
-                "image" => "images/Friends.jpg",
-                "duration" => "22 minutes per episode",
-                "description" => "A classic comedy series about friendship, love, and everyday life in New York."
-            );
+            return null;
         }
 
         function getTimeText($timeCode, $type) {
@@ -180,6 +166,18 @@
         $nameLength = strlen($cleanName);
 
         $recommendation = chooseRecommendation($userMood, $preferredType, $preferredGenre);
+        $hasExactRecommendation = true;
+
+        if ($recommendation == null) {
+            $hasExactRecommendation = false;
+
+            $recommendation = array(
+                "title" => "Friends",
+                "image" => "images/Friends.jpg",
+                "duration" => "22 minutes per episode",
+                "description" => "A classic comedy series about friendship, love, and everyday life in New York."
+            );
+        }
         $timeText = getTimeText($availableTime, $preferredType);
 
         if ($availableTime == "short") {
@@ -201,33 +199,56 @@
 
         echo "<h2>Hello " . htmlspecialchars($displayName) . "!</h2>";
 
-        echo "<p class='result-intro'>Based on your answers, MoodFlix recommends:</p>";
+        if ($hasExactRecommendation) {
+            echo "<p class='result-intro'>Based on your answers, MoodFlix recommends:</p>";
+        } else {
+            echo "<p class='result-intro'>We could not find an exact recommendation based on your choices, but we warmly recommend:</p>";
+        }
 
         echo "<div class='recommendation-result'>";
         echo "<h3>" . $recommendation["title"] . "</h3>";
         echo "<img src='" . $recommendation["image"] . "' alt='" . $recommendation["title"] . " poster'>";
         echo "<p class='recommendation-description'>" . $recommendation["description"] . "</p>";
         echo "<p><strong>Duration:</strong> " . $recommendation["duration"] . "</p>";
-        echo "<p><strong>Your available time:</strong> " . $watchHours . " hours</p>";
+        if ($watchHours == 1) {
+            echo "<p><strong>Your available time:</strong> 1 hour</p>";
+        } else {
+            echo "<p><strong>Your available time:</strong> " . $watchHours . " hours</p>";
+        }
         echo "</div>";
+
+        echo "<div class='mood-explanation-section'>";
 
         echo "<h3>Why this recommendation?</h3>";
 
-        echo "<button type='button' class='back-button' onclick='toggleMoodExplanation()'>Show Explanation</button>";
-        echo "<div id='moodExplanationBox' class='hidden-box'>";
+        echo "<button type='button' class='mood-explanation-button' onclick='toggleMoodExplanation()'>Show Explanation</button>";
 
+        echo "<div id='moodExplanationBox' class='hidden-box'>";
         echo "<ul>";
-        foreach ($moodMessages as $mood => $message) {
-            if ($mood == $userMood) {
-                echo "<li>" . $message . "</li>";
+
+        if ($hasExactRecommendation) {
+            foreach ($moodMessages as $mood => $message) {
+                if ($mood == $userMood) {
+                    echo "<li>" . $message . "</li>";
+                }
             }
+
+            echo "<li>This recommendation matches your preferred category and content type.</li>";
+            echo "<li>The available time was adjusted according to whether you chose a movie or a series.</li>";
+        } else {
+            echo "<li>No exact match was found for the selected mood, category, type, and available time.</li>";
+            echo "<li>Friends was chosen as a warm default recommendation because it is light, popular, and easy to watch.</li>";
         }
-        echo "<li>This recommendation matches your preferred category and content type.</li>";
-        echo "<li>The available time was adjusted according to whether you chose a movie or a series.</li>";
+
         echo "</ul>";
+        echo "</div>";
+
+        echo "</div>";
         ?>
 
-        <a href="recommendations.html" class="back-button">Try Again</a>
+        <div class="result-buttons">
+            <a href="recommendations.html" class="back-button">Try Again</a>
+        </div>
 
     </section>
 

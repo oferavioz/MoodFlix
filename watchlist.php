@@ -126,6 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $genre = $_POST["genre"];
         $status = $_POST["status"];
         $watchDate = $_POST["watch_date"];
+        $season = $_POST["season"];
         $currentEpisode = $_POST["current_episode"];
 
         if ($title == "") {
@@ -136,15 +137,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $watchDateValue = "'" . $watchDate . "'";
             }
-
+            if ($season == "") {
+                $seasonValue = "NULL";
+            } else {
+                $seasonValue = $season;
+            }
             if ($currentEpisode == "") {
                 $currentEpisodeValue = "NULL";
             } else {
                 $currentEpisodeValue = $currentEpisode;
             }
 
-            $sql = "INSERT INTO watchlist (user_id, title, type, genre, status, watch_date, current_episode)
-                    VALUES ('$userId', '$title', '$type', '$genre', '$status', $watchDateValue, $currentEpisodeValue)";
+            $sql = "INSERT INTO watchlist (user_id, title, type, genre, status, watch_date, season, current_episode) 
+VALUES ('$userId', '$title', '$type', '$genre', '$status', $watchDateValue, $seasonValue, $currentEpisodeValue)";
 
             if (mysqli_query($conn, $sql)) {
                 $message = "Item added to your watchlist.";
@@ -330,15 +335,21 @@ $itemsResult = mysqli_query($conn, $itemsSql);
                     </div>
 
                     <div class="watchlist-field">
-                        <label for="watch_date">Watch date:</label>
-                        <input type="date" id="watch_date" name="watch_date">
-                        <small>For series: start date. For movies: watched date.</small>
+                        <label for="season">Season:</label>
+                        <input type="number" id="season" name="season" min="1" placeholder="Season number">
+                        <small>For series only. Leave empty for movies.</small>
                     </div>
 
                     <div class="watchlist-field">
                         <label for="current_episode">Current episode:</label>
                         <input type="number" id="current_episode" name="current_episode" min="0" placeholder="For series only">
                         <small>Use this field only when the item is a series.</small>
+                    </div>
+
+                    <div class="watchlist-field">
+                        <label for="watch_date">Watch date:</label>
+                        <input type="date" id="watch_date" name="watch_date">
+                        <small>For series: start date. For movies: watched date.</small>
                     </div>
                 </div>
 
@@ -360,6 +371,7 @@ $itemsResult = mysqli_query($conn, $itemsSql);
                     <th>Genre</th>
                     <th>Status</th>
                     <th>Watch Date</th>
+                    <th>Season</th>
                     <th>Episode</th>
                     <th>Actions</th>
                 </tr>
@@ -392,7 +404,13 @@ $itemsResult = mysqli_query($conn, $itemsSql);
                             echo "<td>-</td>";
                         }
 
-                        if ($row["current_episode"] != "" && $row["current_episode"] != 0) {
+                        if ($row["type"] == "Series" && $row["season"] != "" && $row["season"] != 0) {
+                            echo "<td>" . htmlspecialchars($row["season"]) . "</td>";
+                        } else {
+                            echo "<td>-</td>";
+                        }
+
+                        if ($row["type"] == "Series" && $row["current_episode"] != "" && $row["current_episode"] != 0) {
                             echo "<td>" . htmlspecialchars($row["current_episode"]) . "</td>";
                         } else {
                             echo "<td>-</td>";
@@ -417,7 +435,7 @@ $itemsResult = mysqli_query($conn, $itemsSql);
                     }
                 } else {
                     echo "<tr>";
-                    echo "<td colspan='8'>Your watchlist is empty.</td>";
+                    echo "<td colspan='9'>Your watchlist is empty.</td>";
                     echo "</tr>";
                 }
                 ?>
