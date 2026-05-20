@@ -88,7 +88,7 @@ function scrollToCategory(categoryId) {
     });
 }
 
-// Search
+// Search + Recommendations
 let moodflixContent = [
     // Comedy movies
     {
@@ -736,6 +736,72 @@ function openDetailsPageByIndex(index) {
     window.location.href = "details.html?index=" + index;
 }
 
+function capitalizeWords(text) {
+    return text
+        .split(" ")
+        .map(function(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(" ");
+}
+
+function createRecommendationCard(item, index) {
+    return (
+        "<div class='movie-card'>" +
+        "<img src='" + item.image + "' alt='" + item.title + " poster'>" +
+        "<span class='genre-tag'>" + capitalizeWords(item.genre) + "</span>" +
+        "<span class='type-tag'>" + capitalizeWords(item.type) + "</span>" +
+        "<h3>" + item.title + "</h3>" +
+        "<p>" + item.about + "</p>" +
+        "</div>"
+    );
+}
+
+function renderRecommendations() {
+    let containers = {
+        "comedy-movie": document.getElementById("comedyMovies"),
+        "comedy-series": document.getElementById("comedySeries"),
+
+        "drama-movie": document.getElementById("dramaMovies"),
+        "drama-series": document.getElementById("dramaSeries"),
+
+        "action-movie": document.getElementById("actionMovies"),
+        "action-series": document.getElementById("actionSeries"),
+
+        "science fiction-movie": document.getElementById("scienceFictionMovies"),
+        "science fiction-series": document.getElementById("scienceFictionSeries"),
+
+        "romance-movie": document.getElementById("romanceMovies"),
+        "romance-series": document.getElementById("romanceSeries")
+    };
+
+    for (let key in containers) {
+        if (containers[key]) {
+            containers[key].innerHTML = "";
+        }
+    }
+
+    for (let i = 0; i < moodflixContent.length; i++) {
+        let item = moodflixContent[i];
+
+        let genresForRecommendations;
+
+        if (item.recommendationGenres) {
+            genresForRecommendations = item.recommendationGenres;
+        } else {
+            genresForRecommendations = [item.genre];
+        }
+
+        for (let j = 0; j < genresForRecommendations.length; j++) {
+            let key = genresForRecommendations[j] + "-" + item.type;
+
+            if (containers[key]) {
+                containers[key].innerHTML += createRecommendationCard(item, i);
+            }
+        }
+    }
+}
+
 function sendMovieRequest() {
     let email = document.getElementById("requestEmail").value;
     let title = document.getElementById("requestTitle").value;
@@ -1270,3 +1336,4 @@ function showDetailsPage() {
 }
 
 window.addEventListener("load", showDetailsPage);
+window.addEventListener("load", renderRecommendations);
