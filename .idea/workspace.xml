@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d4da44f1-1cba-4302-a2b5-fe2d0611a19e" name="Changes" comment="all changes">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodFlixCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodFlixJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PersonalInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Friends.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/HowIMetYourMother.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PersonalPic.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TheCrown.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TheDarkKnight.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TheNoteBook.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/annie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/blackMirror.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/breakingBad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/bridgerton.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/brooklynNineNine.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/cinema.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/emilyInParis.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fauda.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/forrestGump.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gilmoreGirls.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gladiator.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gossipGirl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/greysAnatomy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/inception.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/interstellar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jackRyan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lalaland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lettersForJuliet.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lucifer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/madMax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/madeOfHonor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/meBeforeYou.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/missionImpossible.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/prisonBreak.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/shameless.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/spiderman.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/strangerThings.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/suits.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/sullivansCrossing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/theBigBangTheory.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/theLastKingdom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/theMatrix.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/theNightAgent.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/theProposal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/vampireDiaries.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/vikings.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/virginRiver.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/wednesday.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/whiteChicks.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zohan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/avengers.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moodResult.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recommendations.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reviews.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/anon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watchlist.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/ofera/Desktop/ISEW/MoodFlix" value="3AvgFf2HR07b9jIwTPocyXhU05f" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;oferavioz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/oferavioz/MoodFlix&quot;,
+    &quot;accountId&quot;: &quot;9976ccb4-89c1-47ec-a3e4-3aec7b4497eb&quot;
+  }
+}</component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3AvgFf2HR07b9jIwTPocyXhU05f" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.MoodFlixHTML.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.PersonalInfo.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.moodQuiz.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.recommendations.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.MoodFlixJS.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="MoodFlixJS.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="MoodFlixJS.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4da44f1-1cba-4302-a2b5-fe2d0611a19e" name="Changes" comment="" />
+      <created>1736924443256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736924443256</updated>
+      <workItem from="1736924444283" duration="588000" />
+      <workItem from="1773478357016" duration="51000" />
+      <workItem from="1773478420236" duration="2391000" />
+      <workItem from="1773482872805" duration="174000" />
+      <workItem from="1773483054576" duration="32286000" />
+      <workItem from="1773861194020" duration="653000" />
+      <workItem from="1773862352174" duration="4000" />
+      <workItem from="1773862717139" duration="589000" />
+      <workItem from="1773864289114" duration="29000" />
+      <workItem from="1773864859765" duration="2500000" />
+      <workItem from="1774251192506" duration="66000" />
+      <workItem from="1774518776682" duration="617000" />
+      <workItem from="1775283581459" duration="20000" />
+      <workItem from="1775979300820" duration="21000" />
+      <workItem from="1776692959835" duration="893000" />
+      <workItem from="1777818649060" duration="30000" />
+      <workItem from="1777818689899" duration="83450000" />
+      <workItem from="1779776563430" duration="2084000" />
+    </task>
+    <task id="LOCAL-00001" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1778150901613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1778150901613</updated>
+    </task>
+    <task id="LOCAL-00002" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1778571621774</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1778571621774</updated>
+    </task>
+    <task id="LOCAL-00003" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1778595166178</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1778595166178</updated>
+    </task>
+    <task id="LOCAL-00004" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1778595302483</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1778595302483</updated>
+    </task>
+    <task id="LOCAL-00005" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1778595319019</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778595319019</updated>
+    </task>
+    <task id="LOCAL-00006" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1778595610151</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778595610151</updated>
+    </task>
+    <task id="LOCAL-00007" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1778595621194</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1778595621194</updated>
+    </task>
+    <task id="LOCAL-00008" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1779281448902</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779281448902</updated>
+    </task>
+    <task id="LOCAL-00009" summary="all changes">
+      <option name="closed" value="true" />
+      <created>1779291000421</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779291000421</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="all changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="all changes" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

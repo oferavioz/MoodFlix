@@ -208,6 +208,22 @@ header p {
     color: gold;
 }
 
+.quick-recommend-link {
+    margin-top: 10px;
+    padding: 10px 22px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: plum;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quick-recommend-link:hover {
+    background-color: rgba(221, 160, 221, 0.35);
+    color: white;
+}
+
 /* =========================
    Footer
    ========================= */

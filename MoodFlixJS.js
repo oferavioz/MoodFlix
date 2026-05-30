@@ -21,20 +21,30 @@ function giveRecommendation() {
     let result = document.getElementById("result");
 
     if (mood === "" || time === "") {
-        result.innerText = "Please choose both mood and available time.";
+        result.innerHTML = "Please choose both mood and available time.";
         return;
     }
+
+    let message = "";
+
     if (mood === "happy" && time === "short") {
-        result.innerText = "We recommend a short comedy episode!";
+        message = "We recommend a short comedy episode!";
     } else if (mood === "sad" && time === "medium") {
-        result.innerText = "We recommend an emotional drama movie.";
+        message = "We recommend an emotional drama movie.";
     } else if (mood === "excited" && time === "long") {
-        result.innerText = "We recommend an action-packed thriller series!";
+        message = "We recommend an action-packed thriller series!";
     } else if (mood === "relaxed") {
-        result.innerText = "We recommend a calm feel-good movie.";
+        message = "We recommend a calm feel-good movie.";
     } else {
-        result.innerText = "We recommend exploring our featured categories!";
+        message = "We recommend exploring our featured categories!";
     }
+
+    result.innerHTML =
+        message +
+        "<br><br>" +
+        "<button type='button' class='quick-recommend-link' onclick=\"window.location.href='recommendations.html'\">" +
+        "Explore Recommendations" +
+        "</button>";
 }
 
 // Personal info page
@@ -724,11 +734,9 @@ function searchContent() {
         output += "<p><strong>Rating:</strong> ⭐ " + results[i].rating + "</p>";
         output += "<button type='button' class='details-button' onclick='openDetailsPageByIndex(" + originalIndex + ")'>More Info</button>";
         output += "</div>";
-
         output += "</div>";
         output += "</div>";
     }
-
     resultsBox.innerHTML = output;
 }
 
@@ -869,104 +877,6 @@ function confirmDeleteItem() {
 }
 
 // Reviews
-function getWatchlistImage(title) {
-    let cleanTitle = title.toLowerCase();
-
-    if (cleanTitle === "friends") {
-        return "images/Friends.jpg";
-    } else if (cleanTitle === "how i met your mother") {
-        return "images/HowIMetYourMother.jpg";
-    } else if (cleanTitle === "the crown") {
-        return "images/TheCrown.jpg";
-    } else if (cleanTitle === "the dark knight") {
-        return "images/TheDarkKnight.jpg";
-    } else if (cleanTitle === "inception") {
-        return "images/inception.jpg";
-    } else if (cleanTitle === "mad max" || cleanTitle === "mad max: fury road") {
-        return "images/madMax.jpg";
-    } else if (cleanTitle === "the notebook") {
-        return "images/TheNoteBook.jpg";
-    } else if (cleanTitle === "la la land") {
-        return "images/lalaland.jpg";
-    } else if (cleanTitle === "vampire diaries" || cleanTitle === "the vampire diaries") {
-        return "images/vampireDiaries.jpg";
-    } else if (cleanTitle === "grey's anatomy" || cleanTitle === "greys anatomy") {
-        return "images/greysAnatomy.jpg";
-    } else if (cleanTitle === "sullivan's crossing" || cleanTitle === "sullivans crossing") {
-        return "images/sullivansCrossing.jpg";
-    } else if (cleanTitle === "prison break") {
-        return "images/prisonBreak.jpg";
-    } else if (cleanTitle === "shameless") {
-        return "images/shameless.jpg";
-    } else if (cleanTitle === "fauda") {
-        return "images/fauda.jpg";
-    } else if (cleanTitle === "gossip girl") {
-        return "images/gossipGirl.jpg";
-    } else if (cleanTitle === "gilmore girls") {
-        return "images/gilmoreGirls.jpg";
-    } else if (cleanTitle === "suits") {
-        return "images/suits.jpg";
-    } else if (cleanTitle === "bridgerton") {
-        return "images/bridgerton.jpg";
-    } else if (cleanTitle === "lucifer") {
-        return "images/lucifer.jpg";
-    } else if (cleanTitle === "zohan" || cleanTitle === "you don't mess with the zohan") {
-        return "images/zohan.jpg";
-    } else if (cleanTitle === "vikings") {
-        return "images/vikings.jpg";
-    } else if (cleanTitle === "wednesday") {
-        return "images/wednesday.jpg";
-    } else if (cleanTitle === "letters to juliet") {
-        return "images/lettersForJuliet.jpeg";
-    } else if (cleanTitle === "made of honor") {
-        return "images/madeOfHonor.jpg";
-    } else if (cleanTitle === "spider-man" || cleanTitle === "spiderman") {
-        return "images/spiderman.jpg";
-    } else if (cleanTitle === "annie") {
-        return "images/annie.jpg";
-    } else if (cleanTitle === "black mirror") {
-        return "images/blackMirror.jpg";
-    } else if (cleanTitle === "stranger things") {
-        return "images/strangerThings.jpg";
-    } else if (cleanTitle === "forrest gump") {
-        return "images/forrestGump.jpg";
-    } else if (cleanTitle === "breaking bad") {
-        return "images/breakingBad.jpg";
-    } else if (cleanTitle === "mission impossible") {
-        return "images/missionImpossible.jpg";
-    } else if (cleanTitle === "gladiator") {
-        return "images/gladiator.jpg";
-    } else if (cleanTitle === "the last kingdom") {
-        return "images/theLastKingdom.jpg";
-    } else if (cleanTitle === "the night agent") {
-        return "images/theNightAgent.jpg";
-    } else if (cleanTitle === "jack ryan") {
-        return "images/jackRyan.jpg";
-    } else if (cleanTitle === "interstellar") {
-        return "images/interstellar.jpg";
-    } else if (cleanTitle === "the matrix") {
-        return "images/theMatrix.jpg";
-    } else if (cleanTitle === "avatar") {
-        return "images/avatar.jpg";
-    } else if (cleanTitle === "me before you") {
-        return "images/meBeforeYou.jpg";
-    } else if (cleanTitle === "emily in paris") {
-        return "images/emilyInParis.jpg";
-    } else if (cleanTitle === "virgin river") {
-        return "images/virginRiver.jpg";
-    } else if (cleanTitle === "the proposal") {
-        return "images/theProposal.jpg";
-    } else if (cleanTitle === "white chicks") {
-        return "images/whiteChicks.jpg";
-    } else if (cleanTitle === "the big bang theory") {
-        return "images/theBigBangTheory.jpg";
-    } else if (cleanTitle === "brooklyn nine-nine" || cleanTitle === "brooklyn nine nine") {
-        return "images/brooklynNineNine.jpg";
-    }
-
-    return "";
-}
-
 let selectedHighlightRange = "";
 let selectedHighlightColor = "#dda0dd";
 
@@ -976,6 +886,7 @@ let reviewsList = [
         title: "Inception",
         type: "Movie",
         rating: 5,
+        dateTime: "2026-05-01T20:30",
         text: "A smart and exciting movie with a very creative story."
     },
     {
@@ -983,13 +894,22 @@ let reviewsList = [
         title: "Friends",
         type: "Series",
         rating: 5,
+        dateTime: "2026-04-03T18:00",
         text: "A funny and comforting series that is always fun to watch."
+    },
+    {
+        name: "Lior",
+        title: "The Notebook",
+        type: "Movie",
+        rating: 5,
+        text: "A very emotional and touching movie about love, memory, and time."
     },
     {
         name: "Maya",
         title: "The Crown",
         type: "Series",
         rating: 4,
+        dateTime: "2025-12-08T21:15",
         text: "A beautiful drama series with strong acting and interesting characters."
     },
     {
@@ -997,6 +917,7 @@ let reviewsList = [
         title: "The Dark Knight",
         type: "Movie",
         rating: 5,
+        dateTime: "2026-01-12T19:45",
         text: "A powerful action movie with great acting and an unforgettable villain."
     },
     {
@@ -1004,7 +925,15 @@ let reviewsList = [
         title: "Bridgerton",
         type: "Series",
         rating: 4,
+        dateTime: "2026-05-15T22:00",
         text: "A romantic and colorful series with beautiful costumes and dramatic stories."
+    },
+    {
+        name: "Amit",
+        title: "Prison Break",
+        type: "Series",
+        rating: 4,
+        text: "A suspenseful series with smart plans, action, and strong characters."
     }
 ];
 
@@ -1152,9 +1081,16 @@ function addReview() {
         return;
     }
 
-    let image = getWatchlistImage(title);
+    let cleanTitle = title.toLowerCase().trim();
+    let contentExists = false;
 
-    if (image === "") {
+    for (let i = 0; i < moodflixContent.length; i++) {
+        if (moodflixContent[i].title.toLowerCase().trim() === cleanTitle) {
+            contentExists = true;
+        }
+    }
+
+    if (!contentExists) {
         message.innerText = title + " does not exist in MoodFlix. Please enter a title from the recommendations list.";
         return;
     }
