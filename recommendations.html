@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations - MoodFlix</title>
+    <link rel="stylesheet" href="MoodFlixCSS.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Logo.png" alt="MoodFlix Logo">
+            </a>
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="watchlist.php">Watchlist</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
+    </nav>
+
+    <h1>Recommendations</h1>
+    <p>Discover movies and series based on different moods and genres.</p>
+</header>
+
+<main>
+
+    <section class="recommendations-section">
+
+        <div class="category-nav">
+            <h2>Jump to Category</h2>
+
+            <button onclick="scrollToCategory('comedySection')">Comedy</button>
+            <button onclick="scrollToCategory('dramaSection')">Drama</button>
+            <button onclick="scrollToCategory('actionSection')">Action</button>
+            <button onclick="scrollToCategory('scienceFictionSection')">Science Fiction</button>
+            <button onclick="scrollToCategory('romanceSection')">Romance</button>
+        </div>
+
+        <div class="php-form-section">
+            <h2>Personal Mood Quiz</h2>
+            <p class="section-note">Answer a few questions and get a personalized recommendation</p>
+
+            <form class="php-form" action="moodResult.php" method="post">
+                <div class="form-row">
+                    <label for="userName">Your Name:</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="userMood">Mood:</label>
+                    <select id="userMood" name="userMood" required>
+                        <option value="">Choose mood</option>
+                        <option value="happy">Happy</option>
+                        <option value="emotional">Emotional</option>
+                        <option value="excited">Excited</option>
+                        <option value="relaxed">Relaxed</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="preferredGenre">Preferred Category:</label>
+                    <select id="preferredGenre" name="preferredGenre" required>
+                        <option value="">Choose category</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="drama">Drama</option>
+                        <option value="action">Action</option>
+                        <option value="science fiction">Science Fiction</option>
+                        <option value="romance">Romance</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="preferredType">Preferred Type:</label>
+                    <select id="preferredType" name="preferredType" required>
+                        <option value="">Choose type</option>
+                        <option value="movie">Movie</option>
+                        <option value="series">Series</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="availableTime">Available Time:</label>
+                    <select id="availableTime" name="availableTime" required>
+                        <option value="">Choose time</option>
+                        <option value="short">Short</option>
+                        <option value="medium">Medium</option>
+                        <option value="long">Long</option>
+                    </select>
+                </div>
+
+                <div class="form-buttons">
+                    <input type="submit" value="Get Recommendation">
+                    <input type="reset" value="Clear">
+                </div>
+            </form>
+        </div>
+
+        <div class="category-block" id="comedySection">
+            <p class="section-note">Browse recommendations by category. Scroll sideways to see more.</p>
+            <h3>Comedy</h3>
+
+            <h4>Movies</h4>
+            <div class="horizontal-scroll" id="comedyMovies"></div>
+
+            <h4>Series</h4>
+            <div class="horizontal-scroll" id="comedySeries"></div>
+        </div>
+
+        <div class="category-block" id="dramaSection">
+            <h3>Drama</h3>
+
+            <h4>Movies</h4>
+            <div class="horizontal-scroll" id="dramaMovies"></div>
+
+            <h4>Series</h4>
+            <div class="horizontal-scroll" id="dramaSeries"></div>
+        </div>
+
+        <div class="category-block" id="actionSection">
+            <h3>Action</h3>
+
+            <h4>Movies</h4>
+            <div class="horizontal-scroll" id="actionMovies"></div>
+
+            <h4>Series</h4>
+            <div class="horizontal-scroll" id="actionSeries"></div>
+        </div>
+
+        <div class="category-block" id="scienceFictionSection">
+            <h3>Science Fiction</h3>
+
+            <h4>Movies</h4>
+            <div class="horizontal-scroll" id="scienceFictionMovies"></div>
+
+            <h4>Series</h4>
+            <div class="horizontal-scroll" id="scienceFictionSeries"></div>
+        </div>
+
+        <div class="category-block" id="romanceSection">
+            <h3>Romance</h3>
+
+            <h4>Movies</h4>
+            <div class="horizontal-scroll" id="romanceMovies"></div>
+
+            <h4>Series</h4>
+            <div class="horizontal-scroll" id="romanceSeries"></div>
+        </div>
+
+    </section>
+
+    <section class="genres-section">
+        <h2>Popular Genres</h2>
+
+        <ul class="genres-list">
+            <li>Comedy</li>
+            <li>Drama</li>
+            <li>Action</li>
+            <li>Science Fiction</li>
+            <li>Romance</li>
+        </ul>
+    </section>
+
+    <section class="why-section">
+        <h2>Why Use MoodFlix?</h2>
+
+        <ul class="why-list">
+            <li>Personalized recommendations based on your mood.</li>
+            <li>Curated categories for different genres.</li>
+            <li>Simple search by mood, genre, language, and duration.</li>
+            <li>Personal watchlist for movies and series you want to save.</li>
+            <li>Reviews and ratings to help users choose what to watch.</li>
+        </ul>
+    </section>
+
+    <section class="top-rated-section">
+        <h2>Top Rated This Week</h2>
+
+        <table class="top-rated-table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Rating</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Inception</td>
+                <td>Science Fiction</td>
+                <td>⭐ 9.2</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>The Dark Knight</td>
+                <td>Action</td>
+                <td>⭐ 9.0</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Friends</td>
+                <td>Comedy</td>
+                <td>⭐ 8.9</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>The Crown</td>
+                <td>Drama</td>
+                <td>⭐ 8.7</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>The Notebook</td>
+                <td>Romance</td>
+                <td>⭐ 8.5</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="external-links-section">
+        <h2>External Movie Websites</h2>
+
+        <p>
+            You can also explore:
+            <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">IMDb</a>,
+            <a href="https://www.rottentomatoes.com" target="_blank" rel="noopener noreferrer">Rotten Tomatoes</a>,
+            <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer">Netflix</a>.
+        </p>
+    </section>
+
+    <button class="back-to-top-button" onclick="scrollToTop()">Back to Top</button>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-column footer-brand">
+        <div class="footer-logo">
+            <img src="images/Logo.png" alt="MoodFlix Logo">
+        </div>
+        <p>A smart movie and TV recommendation platform.
+            <br>Built as a college software engineering project.
+        </p>
+    </div>
+
+    <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="watchlist.php">Watchlist</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Contact</h3>
+        <p>Email: moodflix@gmail.com</p>
+        <p>Phone: +972 54-782-9888</p>
+        <p>© 2026 MoodFlix — All rights reserved</p>
+    </div>
+</footer>
+
+<script src="MoodFlixJS.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team - MoodFlix</title>
+    <link rel="stylesheet" href="MoodFlixCSS.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Logo.png" alt="MoodFlix Logo">
+            </a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="watchlist.php">Watchlist</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
+    </nav>
+
+    <h1>Meet the MoodFlix Team</h1>
+    <p>This project was designed and developed as part of a software engineering course.</p>
+</header>
+
+<main>
+    <section class="team-section">
+        <h2>Project Developer</h2>
+
+        <div class="team-card">
+            <img src="images/PersonalPic.jpeg" alt="Ofer Avioz" class="team-image">
+            <h3>Ofer Avioz</h3>
+            <p>
+                I am the developer and the only team member behind MoodFlix (:
+                <br/>
+                Find out more about me!
+            </p>
+            <a href="PersonalInfo.html" class="team-button">View Personal Page</a>
+        </div>
+    </section>
+
+    <section class="team-contact">
+        <h2>Team Contact</h2>
+        <p>If you would like to contact the project developer, click the button below</p>
+
+        <button id="teamContactBtn" onclick="showTeamContact()">Show Contact Info</button>
+
+        <div id="teamContactBox" class="hidden-box">
+            <p>Email: oferavioz1234@gmail.com</p>
+            <p>Phone: +972 54-782-9888</p>
+            <p>
+                LinkedIn: <a href="https://www.linkedin.com/in/oferavioz/" target="_blank">linkedin.com/in/oferavioz/</a>
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-column footer-brand">
+        <div class="footer-logo">
+            <img src="images/Logo.png" alt="MoodFlix Logo">
+        </div>
+        <p>A smart movie and TV recommendation platform.
+            <br>Built as a college software engineering project.
+        </p>
+    </div>
+
+    <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="watchlist.php">Watchlist</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Contact</h3>
+        <p>Email: moodflix@gmail.com</p>
+        <p>Phone: +972 54-782-9888</p>
+        <p>© 2026 MoodFlix — All rights reserved</p>
+    </div>
+</footer>
+
+<script src="MoodFlixJS.js"></script>
+</body>
+</html>

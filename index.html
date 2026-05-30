@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodFlix</title>
+  <link rel="stylesheet" href="MoodFlixCSS.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- to match phone screen size -->
+
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/Logo.png" alt="MoodFlix Logo">
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recommendations.html">Recommendations</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="watchlist.php">Watchlist</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </nav>
+
+  <h1>Welcome to MoodFlix</h1>
+  <p>Find your next movie or series recommendations based on your mood, time, and preferences.</p>
+
+  <button class="welcome-button" onclick="askVisitorName()">Tell us your name</button>
+  <p id="visitorGreeting"></p>
+
+</header>
+
+<main>
+
+  <section class="page-links">
+    <h2>Explore MoodFlix</h2>
+
+    <div class="links-grid">
+      <a href="recommendations.html" class="link-card">
+        <h3>Recommendations</h3>
+        <p>Discover movies and series that match your taste.</p>
+      </a>
+
+      <a href="search.html" class="link-card">
+        <h3>Search</h3>
+        <p>Search for titles by genre, mood, or keyword.</p>
+      </a>
+
+      <a href="watchlist.php" class="link-card">
+        <h3>Watchlist</h3>
+        <p>Keep track of what you want to watch next.</p>
+      </a>
+
+      <a href="reviews.html" class="link-card">
+        <h3>Reviews</h3>
+        <p>Read ratings and reviews from other users.</p>
+      </a>
+
+      <a href="contact.html" class="link-card">
+        <h3>Contact</h3>
+        <p>Send us questions, ideas, and suggestions.</p>
+      </a>
+
+      <a href="team.html" class="link-card">
+        <h3>Team</h3>
+        <p>Meet the team behind the MoodFlix project.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="media-section">
+    <h2>Coming Soon</h2>
+    <h3>Avengers: Doomsday</h3>
+    <p>In theaters December 18, 2026</p>
+
+    <video id="moodflixVideo" controls muted class="media-video">
+      <source src="media/avengers.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="recommend-box">
+    <h2>Get a Quick Recommendation</h2>
+    <p>Select your mood and available time</p>
+
+    <div class="row">
+      <label for="moodSelect">Mood:</label>
+      <select id="moodSelect">
+        <option value="">Choose your mood</option>
+        <option value="happy">Happy</option>
+        <option value="sad">Sad</option>
+        <option value="excited">Excited</option>
+        <option value="relaxed">Relaxed</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="timeSelect">Available Time:</label>
+      <select id="timeSelect">
+        <option value="">Choose available time</option>
+        <option value="short">Less than 1 hour</option>
+        <option value="medium">1-2 hours</option>
+        <option value="long">More than 2 hours</option>
+      </select>
+    </div>
+
+    <button onclick="giveRecommendation()">Recommend Me</button>
+    <p id="result"></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-column footer-brand">
+    <div class="footer-logo">
+      <img src="images/Logo.png" alt="MoodFlix Logo">
+    </div>
+    <p>A smart movie and TV recommendation platform.
+      <br/>Built as a college software engineering project.
+    </p>
+  </div>
+
+  <div class="footer-column">
+    <h3>Quick Links</h3>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recommendations.html">Recommendations</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="watchlist.php">Watchlist</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h3>Contact</h3>
+    <p>Email: moodflix@gmail.com</p>
+    <p>Phone: +972 54-782-9888</p>
+    <p>© 2026 MoodFlix — All rights reserved</p>
+  </div>
+</footer>
+
+<script src="MoodFlixJS.js"></script>
+</body>
+</html>
